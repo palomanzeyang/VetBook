@@ -119,15 +119,18 @@ lib/
 ├── constants/       # Configuration
 ├── widgets/         # Composants UI
 └── screens/         # Écrans principaux
+
 📚 Documentation Complète
 API Reference - Documentation OpenAPI 3.0
 Frontend Guide - Architecture Flutter
 Deployment - Guide de déploiement en production
 🤝 Bonnes Pratiques
 Backend :
+
 # Formatage du code
 mvn spotless:apply
 Frontend :
+
 # Génération des modèles JSON
 flutter pub run build_runner build
 📄 Licence
