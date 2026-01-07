@@ -1,52 +1,61 @@
-# VetBook
-Backend Spring Boot • Frontend Flutter • Sécurité JWT
+# 🐾 VetBook Management System
 
-Spring Boot Flutter Java MySQL License
+*Backend Spring Boot • Frontend Flutter • Sécurité JWT*
 
-📖 Description
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.3-green.svg)](https://spring.io/projects/spring-boot)
+[![Flutter](https://img.shields.io/badge/Flutter-3.16-blue.svg)](https://flutter.dev)
+[![Java](https://img.shields.io/badge/Java-17-blue.svg)](https://openjdk.org/projects/jdk/17/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-orange.svg)](https://www.mysql.com)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+## 📖 Description
+
 Plateforme tout-en-un pour la gestion médicale des animaux, comprenant :
+- **Backend** : API REST sécurisée avec Spring Boot
+- **Frontend** : Application mobile multiplateforme Flutter
+- **Fonctionnalités clés** : Dossiers médicaux, rendez-vous, messagerie sécurisée
 
-Backend : API REST sécurisée avec Spring Boot
-Frontend : Application mobile multiplateforme Flutter
-Fonctionnalités clés : Dossiers médicaux, rendez-vous, messagerie sécurisée
 Destiné aux vétérinaires et propriétaires d'animaux pour simplifier la gestion des soins vétérinaires.
 
-🛠️ Fonctionnalités Techniques
-🔙 Backend Spring Boot
-Gestion des dossiers médicaux
+## 🛠️ Fonctionnalités Techniques
 
-Historique complet des vaccins, maladies et traitements
-Suivi des prescriptions médicales
-Stockage des résultats d'analyses
-Gestion des rendez-vous
+### 🔙 Backend Spring Boot
+- **Gestion des dossiers médicaux** 
+  - Historique complet des vaccins, maladies et traitements
+  - Suivi des prescriptions médicales
+  - Stockage des résultats d'analyses
 
-Prise de rendez-vous en ligne
-Système de rappel automatique
-Calendrier de disponibilité des vétérinaires
-Communication
+- **Gestion des rendez-vous**
+  - Prise de rendez-vous en ligne
+  - Système de rappel automatique
+  - Calendrier de disponibilité des vétérinaires
 
-Messagerie sécurisée propriétaire-vétérinaire
-Notifications push pour les rappels importants
-Sécurité
+- **Communication**
+  - Messagerie sécurisée propriétaire-vétérinaire
+  - Notifications push pour les rappels importants
 
-Authentification JWT sécurisée
-Utilisateurs (Vétérinaire/Propriétaire)
-Chiffrement des données sensibles
-📱 Frontend Flutter
-Pour les propriétaires :
+- **Sécurité**
+  - Authentification JWT sécurisée
+  - Utilisateurs (Vétérinaire/Propriétaire)
+  - Chiffrement des données sensibles
 
-📅 Prise de rendez-vous intuitive
-🏥 Accès à l'historique médical complet
-🔔 Notifications pour vaccins et traitements
-💬 Chat en direct avec le vétérinaire
-Pour les vétérinaires :
+### 📱 Frontend Flutter
+**Pour les propriétaires :**
+- 📅 Prise de rendez-vous intuitive
+- 🏥 Accès à l'historique médical complet
+- 🔔 Notifications pour vaccins et traitements
+- 💬 Chat en direct avec le vétérinaire
 
-🐕 Gestion centralisée des patients
-💊 Système de prescription numérique
-📊 Tableau de bord analytique
-📱 Accès mobile aux dossiers
-🛠 Stack Technique
-Backend (Spring Boot 3.4.3)
+**Pour les vétérinaires :**
+- 🐕 Gestion centralisée des patients
+- 💊 Système de prescription numérique
+- 📊 Tableau de bord analytique
+- 📱 Accès mobile aux dossiers
+
+## 🛠 Stack Technique
+
+### Backend (Spring Boot 3.4.3)
+```xml
 <!-- Dépendances principales -->
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -61,7 +70,10 @@ Backend (Spring Boot 3.4.3)
     <artifactId>jjwt-api</artifactId>
     <version>0.11.5</version>
 </dependency>
-Frontend (Flutter 3.16)
+```
+
+### Frontend (Flutter 3.16)
+```yaml
 dependencies:
   flutter:
     sdk: flutter
@@ -73,65 +85,90 @@ dependencies:
 dev_dependencies:
   build_runner: ^2.4.6            # Génération de code
   json_serializable: ^6.7.1       # Sérialisation JSON
-🚀 Installation Locale
-Prérequis
-Backend : JDK 17+, MySQL 8+, Maven 3.6+
-Frontend : Flutter 3.0+, Android Studio/Xcode
-🔙 Configuration Backend
-Cloner et configurer :
+```
 
-git clone https://github.com/votre-repo/gestion-animaux.git
-cd backend
-Base de données :
+## 🚀 Installation Locale
 
-mysql -u root -p < src/main/resources/schema.sql
-Lancer le serveur :
+### Prérequis
+- **Backend** : JDK 17+, MySQL 8+, Maven 3.6+
+- **Frontend** : Flutter 3.0+, Android Studio/Xcode
 
-mvn spring-boot:run
-API disponible sur http://localhost:8080
+### 🔙 Configuration Backend
+1. **Cloner et configurer** :
+   ```bash
+   git clone https://github.com/votre-repo/gestion-animaux.git
+   cd backend
+   ```
+   
+2. **Base de données** :
+   ```bash
+   mysql -u root -p < src/main/resources/schema.sql
+   ```
 
-📱 Configuration Frontend
-Installer les dépendances :
+3. **Lancer le serveur** :
+   ```bash
+   mvn spring-boot:run
+   ```
+   *API disponible sur http://localhost:8080*
 
-cd frontend
-flutter pub get
-Adapter les endpoints (lib/constants/app_server.dart) :
+### 📱 Configuration Frontend
+1. **Installer les dépendances** :
+   ```bash
+   cd frontend
+   flutter pub get
+   ```
 
-// Configuration multi-environnement
-abstract class AppServer {
-  static const API = String.fromEnvironment('API_URL', 
-    defaultValue: "http://10.0.2.2:8080"); // Android par défaut
-  
-  static const ANIMAL = "$API/animal";
-  static const LOGIN = "$API/api/auth/signin";
-}
-Lancer l'application :
+2. **Adapter les endpoints** (`lib/constants/app_server.dart`) :
+   ```dart
+   // Configuration multi-environnement
+   abstract class AppServer {
+     static const API = String.fromEnvironment('API_URL', 
+       defaultValue: "http://10.0.2.2:8080"); // Android par défaut
+     
+     static const ANIMAL = "$API/animal";
+     static const LOGIN = "$API/api/auth/signin";
+   }
+   ```
 
-flutter run --dart-define=API_URL=http://votre_ip:8080
-🔍 Tester les API
-Méthodes recommandées
-Outil	Commande	Cas d'usage
-Postman	Importez notre collection	Tests manuels
-📊 Architecture Frontend
+3. **Lancer l'application** :
+   ```bash
+   flutter run --dart-define=API_URL=http://votre_ip:8080
+   ```
+
+## 🔍 Tester les API
+
+### Méthodes recommandées
+| Outil          | Commande                      | Cas d'usage          |
+|----------------|-------------------------------|----------------------|
+| **Postman**    | Importez [notre collection](docs/postman.json) | Tests manuels        |
+
+
+## 📊 Architecture Frontend
+```
 lib/
 ├── models/          # Modèles de données
 ├── services/        # Services API
 ├── constants/       # Configuration
 ├── widgets/         # Composants UI
 └── screens/         # Écrans principaux
+```
 
-📚 Documentation Complète
-API Reference - Documentation OpenAPI 3.0
-Frontend Guide - Architecture Flutter
-Deployment - Guide de déploiement en production
-🤝 Bonnes Pratiques
-Backend :
+## 📚 Documentation Complète
+- [API Reference](docs/api.md) - Documentation OpenAPI 3.0
+- [Frontend Guide](docs/frontend_guide.md) - Architecture Flutter
+- [Deployment](docs/deployment.md) - Guide de déploiement en production
 
-# Formatage du code
-mvn spotless:apply
-Frontend :
+## 🤝 Bonnes Pratiques
+- **Backend** : 
+  ```bash
+  # Formatage du code
+  mvn spotless:apply
+  ```
+- **Frontend** :
+  ```bash
+  # Génération des modèles JSON
+  flutter pub run build_runner build
+  ```
 
-# Génération des modèles JSON
-flutter pub run build_runner build
-📄 Licence
-MIT License - Voir LICENSE pour plus de détails
+## 📄 Licence
+MIT License - Voir [LICENSE](LICENSE) pour plus de détails
